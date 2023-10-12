@@ -1,0 +1,24 @@
+
+/* navbar */
+.navbar{
+    background-color: #3D5AFE;
+    height: 70px;
+    font-weight: bold;
+  
+}
+/* name */
+.navbar-brand{
+color: #fff !important;
+}
+/* serach button */
+.btn-primary{
+    background-color : #fff!important;
+    color: #3D5AFE!important;
+    border: 1px solid #fff !important;
+
+}
+
+/* serach  */
+.form-select {
+    width: 200px !important;
+}
