@@ -22,3 +22,9 @@ color: #fff !important;
 .form-select {
     width: 200px !important;
 }
+.row{
+border: 1px solid red !important;
+}
+.col{
+    width: 300px !important;
+}

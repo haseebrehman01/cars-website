@@ -1016,6 +1016,7 @@ var carVariants = {
 // company select option work
 var company = document.getElementById("Company");
 var brand = document.getElementById("brand");
+var allcars = document.getElementById("allcars");
 
 
 company.innerHTML = ` <option value="">Select company</option>`
@@ -1025,23 +1026,43 @@ for (var key in carVariants) {
 
     company.innerHTML += `
     <option value="${key}">${key.toUpperCase()}</option>`;
-  
-   
-}
 
+    for (var key1 in carVariants[key]) {
+        console.log(carVariants[key][key1]);
+
+        var car = carVariants[key][key1]; // Get the current car object
+
+        // Create a card for each car and append it to the allcars element
+        var card = `
+          <div class="col mb-2 " >
+            <div class="card" style="width: 18rem; ">
+              <div class="card-body ">
+                <h4 class="card-title">${car.name}</h4>
+                <h6 class="card-subtitle mb-2 text-body-secondary">${car.model}</h6>
+                <p>${car.cityName}</p>
+                <h3>Rs: ${car.price}</h3>
+              </div>
+            </div>
+          </div>
+        `;
+        allcars.innerHTML += card;
+    }
+}
 
 function onCompanyChange() {
     brand.innerHTML =""
     brand.innerHTML = ` <option value="">Select Brand</option>`
 
-
+// [company.value] yeh toyotta ka anadar ghus rahi or uska versions larahai and vice versa
 for (var key in carVariants[company.value]){   
-// console.log(company.value)
+
 brand.innerHTML +=    ` <option value="${key}">${key.toUpperCase()}</option>`;
 
 
-// var companyValue = carVariants[company.value]
-// console.log(companyValue)
+
+
 }
 }
-// console.log(company)
+
+
+
