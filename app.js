@@ -1016,21 +1016,32 @@ var carVariants = {
 // company select option work
 var company = document.getElementById("Company");
 var brand = document.getElementById("brand");
+
+
 company.innerHTML = ` <option value="">Select company</option>`
 brand.innerHTML = ` <option value="">Select company</option>`
 
 for (var key in carVariants) {
+
     company.innerHTML += `
     <option value="${key}">${key.toUpperCase()}</option>`;
   
+   
 }
 
 
 function onCompanyChange() {
     brand.innerHTML =""
-    brand.innerHTML = ` <option value="">Select company</option>`
+    brand.innerHTML = ` <option value="">Select Brand</option>`
+
+
 for (var key in carVariants[company.value]){   
-console.log(key)
+// console.log(company.value)
 brand.innerHTML +=    ` <option value="${key}">${key.toUpperCase()}</option>`;
+
+
+// var companyValue = carVariants[company.value]
+// console.log(companyValue)
 }
 }
+// console.log(company)
