@@ -1,7 +1,7 @@
 var carVariants = {
     toyota: {
             toyotaCorolla: {
-                img: "public/toyota-corolla.png",
+                img: "https://images.carandbike.com/car-images/big/toyota/corolla-altis/toyota-corolla-altis.jpg?v=19",
                 name: "Toyota Corolla",
                 model: 2023,
                 color: "white",
@@ -9,7 +9,7 @@ var carVariants = {
                 price: 3000000,
             },
             toyotaCamry: {
-                img: "public/toyota-camry.png",
+                img: "https://www.cnet.com/a/img/resize/4476006d1312ec379ee616af256b7596321b3742/hub/2021/08/20/257caf0a-f3a2-45db-9c70-d6ed50a85e6f/2021-toyota-camry-trd-ogi-1.jpg?auto=webp&fit=crop&height=900&width=1200",
                 name: "Toyota Camry",
                 model: 2021,
                 color: "black",
@@ -17,7 +17,7 @@ var carVariants = {
                 price: 2800000,
             },
             toyotaHighlander: {
-                img: "public/toyota-highlander.png",
+                img: "https://cache2.pakwheels.com/system/car_generation_pictures/6583/original/2021-toyota-highlander-le-fwd-natl-angular-front-exterior-view_100767712_l.jpg?1659686040",
                 name: "Toyota Highlander",
                 model: 2021,
                 color: "black",
@@ -25,7 +25,7 @@ var carVariants = {
                 price: 4000000,
             },
             toyotaRav4: {
-                img: "public/toyota-rav4.png",
+                img: "  https://media.ed.edmunds-media.com/toyota/rav4-hybrid/2022/oem/2022_toyota_rav4-hybrid_4dr-suv_se_fq_oem_1_1280.jpg",
                 name: "Toyota RAV4",
                 model: 2021,
                 color: "black",
@@ -1028,7 +1028,6 @@ for (var key in carVariants) {
     <option value="${key}">${key.toUpperCase()}</option>`;
 
     for (var key1 in carVariants[key]) {
-        console.log(carVariants[key][key1]);
 
         var car = carVariants[key][key1]; // Get the current car object
 
@@ -1036,7 +1035,9 @@ for (var key in carVariants) {
         var card = `
           <div class="col mb-2 " >
             <div class="card" style="width: 18rem; ">
+            <img src="${car.img}" class="card-img-top" alt="...">
               <div class="card-body ">
+           
                 <h4 class="card-title">${car.name}</h4>
                 <h6 class="card-subtitle mb-2 text-body-secondary">${car.model}</h6>
                 <p>${car.cityName}</p>
@@ -1065,4 +1066,24 @@ brand.innerHTML +=    ` <option value="${key}">${key.toUpperCase()}</option>`;
 }
 
 
+function filtercars() {
+    var selectedCompany = company.value;
+    var selectedBrand = brand.value;
+    var cardata = carVariants[selectedCompany][selectedBrand];
 
+
+
+    allcars.innerHTML = `
+        <div class="col mb-2" id="main">
+            <div class="card" style="width: 18rem;" id="main2">
+            <img src="${cardata.img}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h4 class="card-title">${cardata.name}</h4>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">${cardata.model}</h6>
+                    <p>${cardata.cityName}</p>
+                    <h3>Rs: ${cardata.price}</h3>
+                </div>
+            </div>
+        </div>
+    `;
+}
