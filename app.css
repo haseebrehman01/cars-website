@@ -1,5 +1,6 @@
 
 /* navbar */
+
 .navbar{
     background-color: #3D5AFE;
     height: 70px;
@@ -23,29 +24,30 @@ color: #fff !important;
     width: 200px !important;
 }
 
-.col{
-    width: 300px !important;
 
-}
-.card{
-    /* width: 100% !important; */
-    height: 100% !important;
 
-}
+
+/*  */
+
+
 .card-img-top{
-    width: 100% !important;
+
     height: 200px !important;
- 
+    border: 1px solid rgb(139, 139, 139);
+ object-fit:  cover;
 }
 #main{
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 50px  !important;
-    width: 4000px !important;
+    /* width: 4000px !important; */
+    
 }
 #main2{
     width: 350px !important;
-    border: 1px solid red;
+
     height: 400px !important;
 }
+
+

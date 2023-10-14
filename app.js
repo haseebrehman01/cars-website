@@ -4,7 +4,7 @@ var carVariants = {
                 img: "https://images.carandbike.com/car-images/big/toyota/corolla-altis/toyota-corolla-altis.jpg?v=19",
                 name: "Toyota Corolla",
                 model: 2023,
-                color: "white",
+                color: ["white","purple","yellow","black"],
                 cityName: "Karachi",
                 price: 3000000,
             },
@@ -12,7 +12,7 @@ var carVariants = {
                 img: "https://www.cnet.com/a/img/resize/4476006d1312ec379ee616af256b7596321b3742/hub/2021/08/20/257caf0a-f3a2-45db-9c70-d6ed50a85e6f/2021-toyota-camry-trd-ogi-1.jpg?auto=webp&fit=crop&height=900&width=1200",
                 name: "Toyota Camry",
                 model: 2021,
-                color: "black",
+                color: ["white","purple","yellow","black"],
                 cityName: "Karachi",
                 price: 2800000,
             },
@@ -20,7 +20,7 @@ var carVariants = {
                 img: "https://cache2.pakwheels.com/system/car_generation_pictures/6583/original/2021-toyota-highlander-le-fwd-natl-angular-front-exterior-view_100767712_l.jpg?1659686040",
                 name: "Toyota Highlander",
                 model: 2021,
-                color: "black",
+                color: ["white","purple","yellow","black"],
                 cityName: "Karachi",
                 price: 4000000,
             },
@@ -33,10 +33,10 @@ var carVariants = {
                 price: 2500000,
             },
             toyotaYaris: {
-                img: "public/toyota-yaris.png",
+                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5aQJRF97Z_-rGSYHqFq9Hmn8o-uhWN5I-xe8MQrN8dA&s",
                 name: "Toyota Yaris",
                 model: 2021,
-                color: "black",
+                color: ["white","purple","yellow","black"],
                 cityName: "Karachi",
                 price: 2500000,
             },
@@ -44,7 +44,7 @@ var carVariants = {
                 img: "public/toyota-land-cruiser.png",
                 name: "Toyota Land Cruiser",
                 model: 2021,
-                color: "black",
+                color: ["white","purple","yellow","black"],
                 cityName: "Karachi",
                 price: 2400000,
             },
@@ -52,7 +52,7 @@ var carVariants = {
                 img: "public/toyota-hilux.png",
                 name: "Toyota Hilux",
                 model: 2021,
-                color: "black",
+                color: ["white","purple","yellow","black"],
                 cityName: "Karachi",
                 price: 2400000,
             },
@@ -60,7 +60,7 @@ var carVariants = {
                 img: "public/toyota-fortuner.png",
                 name: "Toyota Fortuner",
                 model: 2021,
-                color: "black",
+                color: ["white","purple","yellow","black"],
                 cityName: "Karachi",
                 price: 2100000,
             },
@@ -68,7 +68,7 @@ var carVariants = {
                 img: "public/toyota-corolla-cross.png",
                 name: "Toyota Corolla Cross",
                 model: 2021,
-                color: "black",
+                color: ["white","purple","yellow","black"],
                 cityName: "Karachi",
                 price: 2400000,
             },
@@ -76,7 +76,7 @@ var carVariants = {
                 img: "public/toyota-prius.png",
                 name: "Toyota Prius",
                 model: 2021,
-                color: "black",
+                color: ["white","purple","yellow","black"],
                 cityName: "Karachi",
                 price: 5000000,
             },
@@ -92,7 +92,7 @@ var carVariants = {
                 img: "public/toyota-supra.png",
                 name: "Toyota Supra",
                 model: 2021,
-                color: "black",
+                color: ["white","purple","yellow","black"],
                 cityName: "Karachi",
                 price: 2300000,
             },
@@ -112,7 +112,7 @@ var carVariants = {
                 img: "public/hyundai-elantra.png",
                 name: "Hyundai Elantra",
                 model: 2021,
-                color: "black",
+                color: ["white","purple","yellow","black"],
                 cityName: "Lahore",
                 price: 2000000,
             },
@@ -120,7 +120,7 @@ var carVariants = {
                 img: "public/hyundai-tucson.png",
                 name: "Hyundai Tucson",
                 model: 2021,
-                color: "black",
+                color: ["white","purple","yellow","black"],
                 cityName: "Lahore",
                 price: 3000000,
             },
@@ -152,7 +152,7 @@ var carVariants = {
                 img: "public/hyundai-santa-fe.png",
                 name: "Hyundai Santa Fe",
                 model: 2021,
-                color: "black",
+                color: ["white","purple","yellow","black"],
                 cityName: "Lahore",
                 price: 2999999,
             },
@@ -1013,75 +1013,88 @@ var carVariants = {
 
 
 
-// company select option work
+// Get references to HTML elements for the company select, brand select, and a container to display car details.
 var company = document.getElementById("Company");
 var brand = document.getElementById("brand");
 var allcars = document.getElementById("allcars");
 
+// Set default options for the company and brand selects.
+company.innerHTML = `<option value="">Select company</option>`;
+brand.innerHTML = `<option value="">Select company</option>`;
 
-company.innerHTML = ` <option value="">Select company</option>`
-brand.innerHTML = ` <option value="">Select company</option>`
-
+// Loop through each company in the carVariants data.
 for (var key in carVariants) {
+    // Populate the company select with options for each company.
+    company.innerHTML += `<option value="${key}">${key.toUpperCase()}</option>`;
 
-    company.innerHTML += `
-    <option value="${key}">${key.toUpperCase()}</option>`;
-
+    // For each company, loop through its car variants.
     for (var key1 in carVariants[key]) {
+        // Get the details of the current car variant.
+        var car = carVariants[key][key1];
+        var colorDiv = "";
 
-        var car = carVariants[key][key1]; // Get the current car object
+        // Generate HTML for color options associated with the car variant.
+        for (var i = 0; i < car.color.length; i++) {
+            colorDiv += `<div class="me-2 mt-2" style="border: 1px solid; width: 20px; height: 20px; border-radius: 10px; background-color: ${car.color[i]};"></div>`;
+        }
 
-        // Create a card for each car and append it to the allcars element
+        // Create a card with car details and color options, and append it to the container.
         var card = `
-          <div class="col mb-2 " >
-            <div class="card" style="width: 18rem; ">
-            <img src="${car.img}" class="card-img-top" alt="...">
-              <div class="card-body ">
-           
+          <div class="col mb-3">
+            <div class="card" style="width: 18rem;">
+              <img src="${car.img}" class="card-img-top" alt="...">
+              <div class="card-body">
                 <h4 class="card-title">${car.name}</h4>
-                <h6 class="card-subtitle mb-2 text-body-secondary">${car.model}</h6>
+                <h6 class="card-subtitle mb-2 text-body-secondary price">${car.model}</h6>
                 <p>${car.cityName}</p>
                 <h3>Rs: ${car.price}</h3>
+                <div class="d-flex">${colorDiv}</div>
               </div>
             </div>
           </div>
         `;
+
+        // Add the card to the container for all car variants.
         allcars.innerHTML += card;
     }
 }
 
+// Function to handle changes in the selected company.
 function onCompanyChange() {
-    brand.innerHTML =""
-    brand.innerHTML = ` <option value="">Select Brand</option>`
-
-// [company.value] yeh toyotta ka anadar ghus rahi or uska versions larahai and vice versa
-for (var key in carVariants[company.value]){   
-
-brand.innerHTML +=    ` <option value="${key}">${key.toUpperCase()}</option>`;
-
-
-
-
-}
+    // Clear the existing brand options.
+    brand.innerHTML = "";
+    // Set a default brand option.
+    brand.innerHTML = `<option value="">Select Brand</option>`;
+    
+    // Populate the brand select with options based on the selected company.
+    for (var key in carVariants[company.value]) {
+        brand.innerHTML += `<option value="${key}">${key.toUpperCase()}</option>`;
+    }
 }
 
-
+// Function to filter and display car details based on selected company and brand.
 function filtercars() {
     var selectedCompany = company.value;
     var selectedBrand = brand.value;
     var cardata = carVariants[selectedCompany][selectedBrand];
-
-
-
+    
+    // Generate color options based on the selected car variant.
+    var colorDiv = "";
+    for (var i = 0; i < cardata.color.length; i++) {
+        colorDiv += `<div class="me-2 mt-2" style="border: 1px solid; width: 20px; height: 20px; border-radius: 10px; background-color: ${cardata.color[i]};"></div>`;
+    }
+    
+    // Update the container to display details of the selected car variant with the color options.
     allcars.innerHTML = `
         <div class="col mb-2" id="main">
             <div class="card" style="width: 18rem;" id="main2">
-            <img src="${cardata.img}" class="card-img-top" alt="...">
+                <img src="${cardata.img}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h4 class="card-title">${cardata.name}</h4>
-                    <h6 class="card-subtitle mb-2 text-body-secondary">${cardata.model}</h6>
+                    <h4 class "card-title">${cardata.name}</h4>
+                    <h6 class="card-subtitle mb-2 text-body-secondary price">${cardata.model}</h6>
                     <p>${cardata.cityName}</p>
                     <h3>Rs: ${cardata.price}</h3>
+                    <div class="d-flex">${colorDiv}</div>
                 </div>
             </div>
         </div>
