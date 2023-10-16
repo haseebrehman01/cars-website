@@ -1,21 +1,40 @@
 
+body{
+    background-color: #FFF2D8 !important;
+ 
+}
 /* navbar */
 
 .navbar{
-    background-color: #3D5AFE;
-    height: 70px;
+    background-color:  #BCA37F !important;
+    height: 90px;
     font-weight: bold;
-  
+  width: 100% !important;
+
+
+}
+.navbar-expand-lg{
+    position: fixed  !important;
+    top: 0 !important;
+    margin-bottom: 800px !important;
+    z-index: 1;
 }
 /* name */
 .navbar-brand{
 color: #fff !important;
+height: 80px;
+width: 66px;
 }
 /* serach button */
 .btn-primary{
-    background-color : #fff!important;
+    /* background-color : #fff!important;
     color: #3D5AFE!important;
-    border: 1px solid #fff !important;
+    border: 1px solid #fff !important; */
+background-color:#dbd0c1 !important;
+font-size: large !important;
+font-weight: 600 !important;
+ color:rgb(255, 255, 255) !important;
+border: none !important;
 
 }
 
@@ -27,7 +46,7 @@ color: #fff !important;
 
 
 
-/*  */
+
 
 
 .card-img-top{
@@ -40,7 +59,7 @@ color: #fff !important;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 50px  !important;
+    margin-top: 30px  !important;
     /* width: 4000px !important; */
     
 }
@@ -51,3 +70,37 @@ color: #fff !important;
 }
 
 
+.select{
+    display: flex !important;
+    justify-content: center !important;
+
+    margin: 0 auto;
+    padding-top: 20px;
+ 
+}
+.navbar-brand{
+    position: absolute !important; 
+ top: 15px;
+}
+
+.h1{
+ 
+}
+.car-body{
+    background-color: #EAD7BB !;
+}
+.cars{
+   
+}
+.a{
+   
+    color: #fff !important;
+    font-size: larger;
+ 
+    position: absolute;
+    top: 25px;
+    left: 20px;
+}
+.as{
+    margin-top: 90px !important;
+}
