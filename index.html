@@ -3,63 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>car website </title>
+    <title>Car Website</title>
     <link rel="stylesheet" href="app.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid ">
-          <!-- <a  href="#">Cars.Pk</a> -->
-          <!-- <h2 class="h1">CARS.PK</h2> -->
-        <a href="index.html" class="a"><h1>Car.pk</h1></a>
-          <!-- <img class="navbar-brand" src="unnamed-removebg-preview.pn" alt=""> -->
-          <div class="select">
-          
-        
-        
-          <div class="collapse navbar-collapse  " id="navbarSupportedContent ">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                
-            </ul>
-            
-                <select  id="Company" onchange="onCompanyChange()" class="form-select me-2 w" aria-label="Default select example" >
-     
-                  </select>
+            <!-- Navbar brand (logo/text) -->
+            <a class="navbar-brand" href="./index.html"><h1 class="carpk">Car.pk</h1></a>
 
+            <!-- Hamburger menu for small devices -->
+    
 
-                <select    class="form-select me-2" aria-label="Default select example" id="brand">
-              
-               
-                  </select>
-              <button  onclick="filtercars()"  type="button" class="btn btn-primary">Search</button>
-       </div>
-          </div>
+            <!-- Collapsible content (select options + search button) -->
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <!-- Optional navbar links -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                    <!-- Add any links if needed here -->
+                </ul>
+
+                <!-- Select options and search button -->
+                <div class="d-flex flex-column flex-lg-row align-items-center w-100 ">
+                    <select id="Company" onchange="onCompanyChange()" class="form-select mb-2 mb-lg-0 me-lg-2" aria-label="Default select example">
+                        <!-- Company options here -->
+                    </select>
+
+                    <select class="form-select mb-2 mb-lg-0 me-lg-2" aria-label="Default select example" id="brand">
+                        <!-- Brand options here -->
+                    </select>
+
+                    <button onclick="filtercars()" type="button" class="btn btn-primary">Search</button>
+                </div>
+            </div>
         </div>
-    
-      </nav>
+    </nav>
 
-
-
-    
-  
-      <div id="allcars" class="row p-3 as">
-          <!-- You can leave this empty or add default content as needed -->
-      </div>
-
-
+    <!-- Content area -->
+    <div id="allcars" class="row p-3 as">
+        <!-- Cars listing content goes here -->
+    </div>
 
     <script src="app.js"></script>
-    
 </body>
 </html>
-
-<img src="" alt="">
-
-
-<div class="colors">
-  <div>
-    
-  </div>
-</div>

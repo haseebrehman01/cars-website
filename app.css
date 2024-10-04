@@ -1,106 +1,113 @@
+/* General styles */
 
-body{
+
+body {
     background-color: #FFF2D8 !important;
- 
+    width: 100%;
 }
-/* navbar */
 
-.navbar{
-    background-color:  #BCA37F !important;
-    height: 90px;
+/* Navbar styles */
+.navbar {
+    background-color: #ffd08f !important;
     font-weight: bold;
-  width: 100% !important;
-
-
-}
-.navbar-expand-lg{
-    position: fixed  !important;
-    top: 0 !important;
-    margin-bottom: 800px !important;
-    z-index: 1;
-}
-/* name */
-.navbar-brand{
-color: #fff !important;
-height: 80px;
-width: 66px;
-}
-/* serach button */
-.btn-primary{
-    /* background-color : #fff!important;
-    color: #3D5AFE!important;
-    border: 1px solid #fff !important; */
-background-color:#dbd0c1 !important;
-font-size: large !important;
-font-weight: 600 !important;
- color:rgb(255, 255, 255) !important;
-border: none !important;
+    width: 100% !important;
 
 }
 
-/* serach  */
+.navbar-expand-lg {
+    position: relative !important;
+    top: 0;
+    z-index: 2x;
+}
+
+/* Brand styling */
+.navbar-brand {
+    color: #ff0000 !important;
+   
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: #ff9500 !important;
+    font-size: large !important;
+    font-weight: 600 !important;
+    color: rgb(255, 255, 255) !important;
+    border: none !important;
+}
+
+/* Form select width */
 .form-select {
     width: 200px !important;
 }
 
-
-
-
-
-
-
-.card-img-top{
-
+/* Card image styling */
+.card-img-top {
     height: 200px !important;
     border: 1px solid rgb(139, 139, 139);
- object-fit:  cover;
+    object-fit: cover;
 }
-#main{
+
+/* Center main content */
+#main {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-top: 30px  !important;
-    /* width: 4000px !important; */
-    
+    justify-content: space-between;
+    margin-top: 30px !important;
 }
-#main2{
-    width: 350px !important;
 
+/* Style for smaller screens */
+@media (max-width: 768px) {
+    /* Adjust navbar brand font size */
+    .navbar-brand {
+        font-size: 20px;
+    }
+
+    /* Full-width select inputs and button on small screens */
+    .form-select, .btn-primary {
+        width: 100% !important;
+        margin-bottom: 10px;
+    }
+
+    /* Reset margin for button */
+    .btn-primary {
+        margin-top: 10px;
+    }
+}
+
+/* Tablet styles (medium devices) */
+@media (min-width: 768px) and (max-width: 992px) {
+    .navbar-brand {
+        font-size: 24px;
+    }
+
+    /* Adjust select width for medium screens */
+    .form-select {
+        width: 80%;
+    }
+}
+
+/* Optional card styling */
+#main2 {
+    width: 350px !important;
     height: 400px !important;
 }
 
-
-.select{
+.select {
     display: flex !important;
     justify-content: center !important;
-
     margin: 0 auto;
     padding-top: 20px;
- 
-}
-.navbar-brand{
-    position: absolute !important; 
- top: 15px;
 }
 
-.h1{
- 
+
+
+.as {
+
 }
-.car-body{
-    background-color: #EAD7BB !;
+
+.carpk{
+color: #ff9500 !important;
 }
-.cars{
-   
-}
-.a{
-   
-    color: #fff !important;
-    font-size: larger;
- 
-    position: absolute;
-    top: 25px;
-    left: 20px;
-}
-.as{
-    margin-top: 90px !important;
-}
+
+
+

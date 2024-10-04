@@ -821,7 +821,7 @@ for (var key in carVariants) {
 
         // Create a card with car details and color options, and append it to the container.
         var card = `
-          <div class="col mb-3">
+          <div class="col mb-3 ">
             <div class="card" style="width: 18rem;">
               <img src="${car.img}" class="card-img-top" alt="...">
               <div class="card-body" style="background-color: #EAD7BB !important;">
